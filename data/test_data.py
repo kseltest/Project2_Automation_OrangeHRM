@@ -1,0 +1,8 @@
+baseurl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+username = "Admin"
+password = "admin123"
+usernegative = "testuser1"
+resetuser = "testuser1"
+resetnegative = ""
+loginurl = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+pagetitle = "OrangeHRM"
