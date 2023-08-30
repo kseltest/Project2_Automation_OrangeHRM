@@ -36,6 +36,7 @@ class TestAdminHeader:
         assert self.admin_header_page.find_corporatebanking() is True
         assert self.admin_header_page.find_configuration() is True
 
+        print("The title of Admin page is :", self.driver.title)
         print("All Admin Headers are present in Admin Page")
 
     def teardown_class(self):
