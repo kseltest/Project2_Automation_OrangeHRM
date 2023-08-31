@@ -1,3 +1,5 @@
+import time
+
 from locators.forget_pwd_locator import ForgetPwdLocators
 from pages.base.base_page import BasePage
 
@@ -17,6 +19,7 @@ class ForgotPassword(BasePage):
 
     def click_reset_button(self):
         self.find_element(*ForgetPwdLocators._reset_button).click()
+        time.sleep(2)
 
         if self.reset_user == "":
             print("Reset Password with Username = [blank]")
