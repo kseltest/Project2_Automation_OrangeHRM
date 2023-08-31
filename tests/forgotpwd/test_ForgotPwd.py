@@ -16,7 +16,7 @@ class TestForgotPwd:
     def setup_class(self):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
-        self.driver.implicitly_wait(0.5)
+        self.driver.implicitly_wait(5)
         self.base_page = BasePage(self.driver)
         self.forgetpwd_page = ForgotPassword(self.base_page)
 
@@ -31,7 +31,7 @@ class TestForgotPwd:
             print("Forgot Password Link is present in page: ", self.driver.current_url)
             time.sleep(2)
             self.forgetpwd_page.forget_password_link()
-        except:
+        except Exception:
             print("Forget Password Link is NOT present in page: ", self.driver.current_url)
 
     @pytest.mark.test_reset_password_blank
@@ -42,7 +42,7 @@ class TestForgotPwd:
         print("Forgot Password Link redirects to URL = ", self.driver.current_url)
         self.forgetpwd_page.reset_username(test_data.resetnegative)
         self.forgetpwd_page.click_reset_button()
-        time.sleep(3)
+        time.sleep(2)
 
     @pytest.mark.test_reset_password_value
     def test_reset_password_value(self):
@@ -51,8 +51,9 @@ class TestForgotPwd:
 
         print("Forgot Password Link redirects to URL = ", self.driver.current_url)
         self.forgetpwd_page.reset_username(test_data.resetuser)
-        self.forgetpwd_page.click_reset_button()
         time.sleep(3)
+        self.forgetpwd_page.click_reset_button()
+        time.sleep(2)
 
     def teardown_class(self):
         self.driver.close()
