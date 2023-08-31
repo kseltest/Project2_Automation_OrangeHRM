@@ -8,6 +8,7 @@ class AdminHeaderPage(LoginPage):
         super().__init__(driver)
 
     def goto_page(self):
+        """ Select Admin on Page """
         self.find_element(*AdminLocator.admin).click()
 
     def find_header(self):

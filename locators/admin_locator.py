@@ -2,11 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class AdminLocator:
-    """ Locators for Admin Page """
-    _username_field = (By.NAME, 'username')
-    _password_field = (By.NAME, 'password')
-    _login_button = (By.XPATH, '//button[@type="submit"]')
-
     """ Locators for Admin Header """
     admin = (By.XPATH, '//a[@href="/web/index.php/admin/viewAdminModule"]')
     user_management = (By.XPATH, '//span[text()="User Management "]')

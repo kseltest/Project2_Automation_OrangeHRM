@@ -17,7 +17,10 @@ class ForgotPassword(BasePage):
 
     def click_reset_button(self):
         self.find_element(*ForgetPwdLocators._reset_button).click()
+
         if self.reset_user == "":
+            print("Reset Password with Username = [blank]")
             print("ERROR = ", self.get_text(*ForgetPwdLocators._err_message))
         else:
+            print("Reset Password with Username = ", self.reset_user)
             print("SUCCESS = ", self.get_text(*ForgetPwdLocators._success_message))
